@@ -1,2 +1,5 @@
-flask
-gunicorn
+Flask==2.2.3
+openai==0.27.0
+assemblyai==0.5.4
+gunicorn==20.1.0
+requests==2.28.2
