@@ -13,26 +13,19 @@ app = Flask(__name__)
 
 MOCKS_FOLDER = "mocks"
 
-# Load API Key from env.txt
+# Load API Key from environment variables
 def load_api_key():
-    try:
-        with open("env.txt", "r") as file:
-            for line in file:
-                if line.startswith("OPENAI_API_KEY"):
-                    api_key = line.strip().split("=")[1]
-                    return api_key
-    except FileNotFoundError:
-        return None
-    
-# Load AssemblyAI API Key from env.txt
+    api_key = os.getenv("OPENAI_API_KEY")
+    if api_key:
+        return api_key
+    return None
+
+# Load AssemblyAI API Key from environment variables
 def load_assemblyai_key():
-    try:
-        with open("env.txt", "r") as file:
-            for line in file:
-                if line.startswith("ASSEMBLYAI_API_KEY"):
-                    return line.strip().split("=")[1]
-    except FileNotFoundError:
-        return None
+    api_key = os.getenv("ASSEMBLYAI_API_KEY")
+    if api_key:
+        return api_key
+    return None
     
 def get_latest_transcription(mock_name, question_num):
     # Directory where transcriptions are saved
