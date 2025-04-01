@@ -1,0 +1,80 @@
+[
+    {
+        "question_number": 1,
+        "question": "A patient is refusing a life-saving blood transfusion due to religious beliefs. How would you handle this situation as a doctor?",
+        "mark_scheme": {
+            "good_points": [
+                "Respects the patient’s autonomy",
+                "Explores the patient’s beliefs sensitively",
+                "Discusses alternative treatment options",
+                "Seeks legal and ethical advice if necessary"
+            ],
+            "red_flags": [
+                "Pressures the patient into treatment",
+                "Shows disrespect for religious beliefs"
+            ]
+        }
+    },
+    {
+        "question_number": 2,
+        "question": "Why do you want to study medicine, and what steps have you taken to prepare for a career in healthcare?",
+        "mark_scheme": {
+            "good_points": [
+                "Provides genuine reasons for choosing medicine",
+                "Mentions work experience or volunteering",
+                "Demonstrates commitment and insight into the profession"
+            ],
+            "red_flags": [
+                "Gives superficial reasons",
+                "Does not mention any preparation or experience"
+            ]
+        }
+    },
+    {
+        "question_number": 3,
+        "question": "How would you explain the concept of informed consent to a patient who speaks limited English?",
+        "mark_scheme": {
+            "good_points": [
+                "Uses simple language",
+                "Suggests using an interpreter",
+                "Checks for understanding",
+                "Shows patience and empathy"
+            ],
+            "red_flags": [
+                "Uses complex medical jargon",
+                "Fails to ensure understanding"
+            ]
+        }
+    },
+    {
+        "question_number": 4,
+        "question": "Discuss the role of leadership in healthcare and provide an example of when you demonstrated leadership.",
+        "mark_scheme": {
+            "good_points": [
+                "Explains the importance of leadership in patient care",
+                "Provides a personal example",
+                "Shows teamwork and communication skills",
+                "Reflects on what they learned"
+            ],
+            "red_flags": [
+                "Fails to provide an example",
+                "Shows an authoritarian style of leadership"
+            ]
+        }
+    },
+    {
+        "question_number": 5,
+        "question": "Should the NHS provide free IVF treatments? Discuss the ethical and financial considerations.",
+        "mark_scheme": {
+            "good_points": [
+                "Considers patient rights and wellbeing",
+                "Discusses cost and resource allocation",
+                "Offers a balanced perspective"
+            ],
+            "red_flags": [
+                "Only presents one side",
+                "Fails to mention resource limitations"
+            ]
+        }
+    }
+]

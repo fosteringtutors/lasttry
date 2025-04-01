@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Interview Menu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .mock-container {
+            background-color: #eee8de; /* Updated background color for the larger box */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .mock-list {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* Ensures exactly 5 per row */
+            gap: 15px; /* Space between items */
+            list-style: none;
+            padding: 0;
+        }
+
+        .mock-list li {
+            background-color: #c25252; /* Box color */
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+            transition: border-color 0.3s ease; /* Only transition border color */
+            border: 4px solid #c25252; /* Increased border thickness */
+            box-sizing: border-box; /* Ensure padding/border is included in size */
+        }
+
+        .mock-list li:hover {
+            border-color: #ff7900; /* Hover effect for the border only */
+        }
+
+        .mock-link {
+            text-decoration: none;
+            color: white; /* Make text white */
+            font-size: 18px;
+            font-weight: bold;
+            display: block;
+            padding: 15px; /* Add padding for content inside the link */
+            width: 100%; /* Make the link fill the entire li */
+            height: 100%; /* Make the link fill the entire li */
+            box-sizing: border-box; /* Include padding in width/height calculation */
+        }
+
+        .mock-link:hover {
+            color: white; /* Keep text white when hovered */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mock Interview Menu</h1>
+            <p>Choose a mock interview to start practicing</p>
+        </header>
+
+        <section>
+            <h2>Available Mock Interviews:</h2>
+            <div class="mock-container">
+                <ul class="mock-list">
+                    {% for mock in mocks %}
+                        {% set mock_number = mock.split('.')[0][4:] %} <!-- Extract number from filename -->
+                        <li>
+                            <a href="{{ url_for('show_question', mock_name=mock, question_num=1) }}" class="mock-link">Mock {{ mock_number }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+

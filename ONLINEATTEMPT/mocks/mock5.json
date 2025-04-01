@@ -1,0 +1,79 @@
+[
+    {
+        "question_number": 1,
+        "question": "What is patient confidentiality, and are there any circumstances where you would break it?",
+        "mark_scheme": {
+            "good_points": [
+                "Explains confidentiality clearly",
+                "Mentions exceptions like safeguarding and risk of harm",
+                "Demonstrates understanding of ethical principles"
+            ],
+            "red_flags": [
+                "Fails to mention exceptions",
+                "Does not explain why confidentiality matters"
+            ]
+        }
+    },
+    {
+        "question_number": 2,
+        "question": "Describe a time when you had to adapt your communication style to suit someone else.",
+        "mark_scheme": {
+            "good_points": [
+                "Demonstrates flexibility in communication",
+                "Explains how they assessed the other person’s needs",
+                "Reflects on what they learned"
+            ],
+            "red_flags": [
+                "Fails to adapt or show self-awareness",
+                "Uses jargon or complex language"
+            ]
+        }
+    },
+    {
+        "question_number": 3,
+        "question": "Discuss the ethical issues surrounding the use of animals in medical research.",
+        "mark_scheme": {
+            "good_points": [
+                "Considers both scientific benefits and animal welfare",
+                "Mentions regulations like the Animals (Scientific Procedures) Act 1986",
+                "Provides a balanced view"
+            ],
+            "red_flags": [
+                "Only presents one side",
+                "Ignores the ethical debate"
+            ]
+        }
+    },
+    {
+        "question_number": 4,
+        "question": "How would you explain a cancer diagnosis to a patient in a compassionate way?",
+        "mark_scheme": {
+            "good_points": [
+                "Uses clear, simple language",
+                "Shows empathy and sensitivity",
+                "Offers emotional support",
+                "Checks for understanding"
+            ],
+            "red_flags": [
+                "Uses insensitive language",
+                "Fails to offer emotional support"
+            ]
+        }
+    },
+    {
+        "question_number": 5,
+        "question": "Should doctors always follow a patient’s wishes, even if they disagree with them?",
+        "mark_scheme": {
+            "good_points": [
+                "Explores patient autonomy",
+                "Considers medical best interests",
+                "Mentions ethical dilemmas",
+                "Provides a balanced view"
+            ],
+            "red_flags": [
+                "Only presents one side",
+                "Fails to mention autonomy"
+            ]
+        }
+    }
+]

@@ -1,0 +1,82 @@
+[
+    {
+        "question_number": 1,
+        "question": "The NHS is facing increasing pressure due to an ageing population. How should the NHS prioritise its resources?",
+        "mark_scheme": {
+            "good_points": [
+                "Acknowledges the challenge of limited resources",
+                "Discusses the importance of prioritising based on clinical need",
+                "Considers ethical principles such as fairness and equality",
+                "Mentions preventative healthcare as a long-term solution"
+            ],
+            "red_flags": [
+                "Fails to mention resource limitations",
+                "Does not provide a balanced argument"
+            ]
+        }
+    },
+    {
+        "question_number": 2,
+        "question": "Describe a time when you resolved a conflict in a team. What steps did you take?",
+        "mark_scheme": {
+            "good_points": [
+                "Describes the conflict clearly",
+                "Demonstrates active listening and empathy",
+                "Shows leadership in facilitating resolution",
+                "Reflects on what was learned from the experience"
+            ],
+            "red_flags": [
+                "Fails to describe personal contribution",
+                "Dismisses the importance of teamwork"
+            ]
+        }
+    },
+    {
+        "question_number": 3,
+        "question": "A patient refuses treatment that could significantly improve their quality of life. How would you approach this situation?",
+        "mark_scheme": {
+            "good_points": [
+                "Respects patient autonomy",
+                "Explores the patient’s concerns",
+                "Provides clear, balanced information",
+                "Encourages shared decision-making"
+            ],
+            "red_flags": [
+                "Dismisses the patient’s views",
+                "Pressures the patient into treatment"
+            ]
+        }
+    },
+    {
+        "question_number": 4,
+        "question": "What are the key challenges facing the NHS today, and how could they be addressed?",
+        "mark_scheme": {
+            "good_points": [
+                "Mentions funding shortages, staff shortages, and waiting times",
+                "Considers preventative healthcare and technological innovation",
+                "Provides practical solutions",
+                "Balances patient care with financial sustainability"
+            ],
+            "red_flags": [
+                "Fails to mention multiple challenges",
+                "Does not propose any solutions"
+            ]
+        }
+    },
+    {
+        "question_number": 5,
+        "question": "Tell us about a time when you received constructive criticism. How did you respond?",
+        "mark_scheme": {
+            "good_points": [
+                "Describes the situation clearly",
+                "Demonstrates a positive attitude towards feedback",
+                "Explains how they implemented the feedback",
+                "Reflects on personal growth"
+            ],
+            "red_flags": [
+                "Dismisses or reacts negatively to feedback",
+                "Fails to show self-reflection"
+            ]
+        }
+    }
+]

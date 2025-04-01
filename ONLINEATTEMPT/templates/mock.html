@@ -1,0 +1,292 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question {{ question_num }}: {{ question['question'] }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        /* The Loading Bar */
+        #loading-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background-color: #ff7900;
+            width: 0%;
+            z-index: 9999;
+            transition: width 0.4s ease;
+        }
+
+        /* Loading Spinner and AI Marking Message */
+        .loading-container {
+            display: none; /* Hidden by default */
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .loading-spinner {
+            background-color: #e7ded0;
+            padding: 10px;
+            border-radius: 50%;
+        }
+
+        .loading-spinner img {
+            width: 50px;
+        }
+
+        .ai-marking-message, .transcription-message {
+            font-size: 18px;
+            color: #eee8de;
+            font-weight: bold;
+        }
+
+        /* Transcription Spinner */
+        .transcription-container {
+            display: none; /* Hidden by default */
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .transcription-message {
+            font-size: 18px;
+            color: #eee8de;
+            font-weight: bold;
+        }
+
+        /* Start/Stop Recording Buttons */
+        .recording-btns {
+            margin-top: 20px; /* Increased space between submit and recording buttons */
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .recording-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #888f82;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .recording-btn:hover {
+            background-color: #e66a00;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-bar"></div>
+
+    <div class="container">
+        <header>
+            <h1>Question {{ question_num }}: {{ question['question'] }}</h1>
+        </header>
+
+        <section>
+            <form id="answer-form">
+                <textarea name="answer" id="answer" rows="5" placeholder="Write your answer here, or answer verbally via the record buttons..."></textarea><br>
+
+                <button type="submit" class="submit-btn">Submit Answer</button>
+
+                <!-- Start/Stop Recording Buttons -->
+                <div class="recording-btns">
+                    <button id="start-recording" class="recording-btn">🎙️ Start Recording</button>
+                    <button id="stop-recording" class="recording-btn" disabled>🛑 Stop Recording</button>
+                </div>
+            </form>
+
+            <!-- Spinner & AI Marking Message (Initially Hidden) -->
+            <div class="loading-container" id="loading-container" style="display: none;">
+                <div class="loading-spinner">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" alt="Loading...">
+                </div>
+                <div class="ai-marking-message">
+                    <p>AI is marking...</p>
+                </div>
+            </div>
+
+            <!-- New Transcription Spinner & Message (Initially Hidden) -->
+            <div class="transcription-container" id="transcription-container" style="display: none;">
+                <div class="loading-spinner">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" alt="Loading...">
+                </div>
+                <div class="transcription-message">
+                    <p>We are listening to your response...</p>
+                </div>
+            </div>
+
+            <!-- Evaluation Results -->
+            <div id="evaluation-container"></div>
+        </section>
+
+        <footer>
+            <div class="navigation">
+                {% if question_num < total %}
+                    <a href="{{ url_for('show_question', mock_name=mock_name, question_num=question_num + 1) }}" class="nav-btn">Next Question</a>
+                {% else %}
+                    <a href="{{ url_for('index') }}" class="nav-btn">Back to Home</a>
+                {% endif %}
+            </div>
+        </footer>
+    </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var loadingBar = document.getElementById("loading-bar");
+        var loadingContainer = document.getElementById("loading-container");
+        var evaluationContainer = document.getElementById("evaluation-container");
+        var transcriptionContainer = document.getElementById("transcription-container");
+        var answerForm = document.getElementById("answer-form");
+
+        var startRecordingBtn = document.getElementById("start-recording");
+        var stopRecordingBtn = document.getElementById("stop-recording");
+
+        let mediaRecorder;
+        let audioChunks = [];
+
+        // Create a status message element
+        let recordingStatus = document.createElement("div");
+        recordingStatus.id = "recording-status";
+        recordingStatus.style.position = "fixed";
+        recordingStatus.style.bottom = "20px";
+        recordingStatus.style.left = "50%";
+        recordingStatus.style.transform = "translateX(-50%)";
+        recordingStatus.style.backgroundColor = "#ff7900";
+        recordingStatus.style.color = "#fff";
+        recordingStatus.style.padding = "10px 20px";
+        recordingStatus.style.borderRadius = "5px";
+        recordingStatus.style.fontSize = "16px";
+        recordingStatus.style.display = "none";
+        document.body.appendChild(recordingStatus);
+
+        startRecordingBtn.addEventListener("click", async function() {
+            startRecordingBtn.disabled = true;
+            stopRecordingBtn.disabled = false;
+
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                mediaRecorder = new MediaRecorder(stream);
+
+                mediaRecorder.ondataavailable = event => {
+                    if (event.data.size > 0) {
+                        audioChunks.push(event.data);
+                    }
+                };
+
+mediaRecorder.onstop = async () => {
+    const audioBlob = new Blob(audioChunks, { type: "audio/wav" });
+    const formData = new FormData();
+    formData.append("audio", audioBlob, "response.wav");
+    formData.append("mock_name", "{{ mock_name }}");
+    formData.append("question_num", "{{ question_num }}");
+
+    // Show transcription spinner immediately after stopping recording
+    transcriptionContainer.style.display = "flex";
+    console.log("Transcription spinner shown");
+
+    try {
+        const response = await fetch("{{ url_for('save_audio', mock_name=mock_name, question_num=question_num, _external=True) }}", {
+            method: "POST",
+            body: formData
+        });
+
+        const result = await response.json();
+
+        if (result.transcription) {
+            document.getElementById("answer").value = result.transcription;
+        }
+
+        console.log("Transcription received:", result.transcription);
+
+        // Hide transcription spinner once text is pasted
+        transcriptionContainer.style.display = "none";
+        console.log("Transcription spinner hidden");
+
+    } catch (error) {
+        console.error("Error uploading audio:", error);
+        transcriptionContainer.style.display = "none"; // Hide spinner on failure
+    }
+
+    // Reset for next recording
+    audioChunks = [];
+};
+
+                mediaRecorder.start();
+                recordingStatus.textContent = "Recording in progress...";
+                recordingStatus.style.display = "block";
+                console.log("Recording started...");
+            } catch (error) {
+                console.error("Error accessing microphone:", error);
+            }
+        });
+
+        stopRecordingBtn.addEventListener("click", function() {
+            if (mediaRecorder && mediaRecorder.state !== "inactive") {
+                mediaRecorder.stop();
+                console.log("Recording stopped...");
+
+                
+                // Hide the status message after 2 seconds
+                setTimeout(() => { recordingStatus.style.display = "none"; }, 10);
+            }
+
+            startRecordingBtn.disabled = false;
+            stopRecordingBtn.disabled = true;
+        });
+
+        // Function to format feedback into bullet points
+        function formatFeedback(feedback) {
+            feedback = feedback.replace(/Score: \d+\/10\s*/, "");
+            feedback = feedback.replace(/\*\*\s*What you did well:\s*\*\*/i, "<strong>What you did well:</strong><br>");
+            feedback = feedback.replace(/\*\*\s*How you could improve:\s*\*\*/i, "<br><strong>How you could improve:</strong><br>");
+            feedback = feedback.replace(/\*\*/g, "");
+            feedback = feedback.replace(/(<br>)(<strong>How you could improve:<\/strong>)/g, "$1<br>$2");
+            feedback = feedback.replace(/(?:\n|^)[-•]\s+(?=\S)/g, "<br>• ");
+            return feedback;
+        }
+
+        answerForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            // Show loading bar and spinner
+            loadingBar.style.width = "100%";
+            loadingContainer.style.display = "flex";
+            evaluationContainer.innerHTML = ""; // Clear previous evaluation
+            
+            var formData = new FormData(answerForm);
+
+            fetch("{{ url_for('show_question', mock_name=mock_name, question_num=question_num) }}", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                loadingBar.style.width = "0%";
+                loadingContainer.style.display = "none";
+
+                evaluationContainer.innerHTML = `
+                    <h2>AI Evaluation:</h2>
+                    <p><strong>Score:</strong> ${data.score}/10</p>
+                    <p><strong>Feedback:</strong></p>
+                    <div id="formatted-feedback">${formatFeedback(data.feedback)}</div>
+                `;
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                loadingBar.style.width = "0%";
+                loadingContainer.style.display = "none";
+                evaluationContainer.innerHTML = "<p>An error occurred. Please try again.</p>";
+            });
+        });
+    });
+</script>
+</body>
+

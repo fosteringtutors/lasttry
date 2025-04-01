@@ -1,0 +1,82 @@
+[
+    {
+        "question_number": 1,
+        "question": "Describe a time when you supported someone going through a difficult situation. How did you demonstrate empathy?",
+        "mark_scheme": {
+            "good_points": [
+                "Describes the situation in detail",
+                "Demonstrates active listening and emotional support",
+                "Explains how they tailored their approach to the person’s needs",
+                "Reflects on the importance of empathy"
+            ],
+            "red_flags": [
+                "Fails to describe personal involvement",
+                "Focuses on practical help without emotional support"
+            ]
+        }
+    },
+    {
+        "question_number": 2,
+        "question": "What role do you think technology will play in the future of healthcare?",
+        "mark_scheme": {
+            "good_points": [
+                "Mentions AI, telemedicine, and personalised medicine",
+                "Discusses both benefits and challenges",
+                "Considers the importance of patient data security",
+                "Provides a balanced view of technology’s role"
+            ],
+            "red_flags": [
+                "Fails to discuss both positive and negative impacts",
+                "Overlooks the importance of patient safety"
+            ]
+        }
+    },
+    {
+        "question_number": 3,
+        "question": "You are volunteering at a care home, and one resident becomes upset and aggressive. How would you respond?",
+        "mark_scheme": {
+            "good_points": [
+                "Stays calm and composed",
+                "Demonstrates empathy and patience",
+                "Tries to understand the cause of the behaviour",
+                "Seeks help if necessary"
+            ],
+            "red_flags": [
+                "Responds with frustration or aggression",
+                "Fails to seek help when needed"
+            ]
+        }
+    },
+    {
+        "question_number": 4,
+        "question": "How do you manage your time when balancing multiple commitments?",
+        "mark_scheme": {
+            "good_points": [
+                "Mentions prioritisation techniques",
+                "Explains how they stay organised",
+                "Provides a personal example",
+                "Reflects on how they maintain wellbeing"
+            ],
+            "red_flags": [
+                "Does not provide an example",
+                "Fails to mention wellbeing or balance"
+            ]
+        }
+    },
+    {
+        "question_number": 5,
+        "question": "Discuss the ethical implications of genetic testing and screening.",
+        "mark_scheme": {
+            "good_points": [
+                "Explains the benefits of genetic testing",
+                "Discusses ethical concerns like privacy, consent, and discrimination",
+                "Mentions patient autonomy and confidentiality",
+                "Provides a balanced view"
+            ],
+            "red_flags": [
+                "Fails to mention ethical considerations",
+                "Overlooks patient consent or privacy"
+            ]
+        }
+    }
+]

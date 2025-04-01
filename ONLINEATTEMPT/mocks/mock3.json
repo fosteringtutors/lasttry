@@ -1,0 +1,80 @@
+[
+    {
+        "question_number": 1,
+        "question": "A patient has been diagnosed with Type 2 Diabetes and is struggling to make lifestyle changes. How would you approach this situation as their GP?",
+        "mark_scheme": {
+            "good_points": [
+                "Shows empathy and understanding",
+                "Asks about current lifestyle habits",
+                "Provides tailored advice on diet and exercise",
+                "Offers long-term support options like dietitian referrals"
+            ],
+            "red_flags": [
+                "Judges the patient’s lifestyle",
+                "Fails to offer practical solutions"
+            ]
+        }
+    },
+    {
+        "question_number": 2,
+        "question": "Describe a time when you had to persuade someone to see your point of view. How did you approach the situation?",
+        "mark_scheme": {
+            "good_points": [
+                "Demonstrates good communication skills",
+                "Shows active listening and empathy",
+                "Highlights the importance of compromise",
+                "Reflects on what they learned from the experience"
+            ],
+            "red_flags": [
+                "Shows a lack of empathy",
+                "Uses forceful or aggressive methods"
+            ]
+        }
+    },
+    {
+        "question_number": 3,
+        "question": "What are the key qualities of a good doctor, and how have you demonstrated these in your life?",
+        "mark_scheme": {
+            "good_points": [
+                "Mentions qualities like empathy, communication, and resilience",
+                "Provides real-life examples",
+                "Shows self-awareness and reflection"
+            ],
+            "red_flags": [
+                "Only lists qualities without examples",
+                "Fails to show self-awareness"
+            ]
+        }
+    },
+    {
+        "question_number": 4,
+        "question": "Should the NHS fund cosmetic surgery for non-medical reasons? Discuss both sides of the argument.",
+        "mark_scheme": {
+            "good_points": [
+                "Considers both ethical and financial implications",
+                "Explores patient wellbeing versus resource allocation",
+                "Provides a balanced view"
+            ],
+            "red_flags": [
+                "Only presents one side of the argument",
+                "Fails to mention the NHS’s limited resources"
+            ]
+        }
+    },
+    {
+        "question_number": 5,
+        "question": "Explain the importance of empathy in medicine and give an example of when you demonstrated empathy.",
+        "mark_scheme": {
+            "good_points": [
+                "Defines empathy clearly",
+                "Explains how empathy benefits patient care",
+                "Uses a personal example",
+                "Reflects on the experience"
+            ],
+            "red_flags": [
+                "Fails to provide an example",
+                "Confuses empathy with sympathy"
+            ]
+        }
+    }
+]

@@ -1,0 +1,83 @@
+[
+    {
+        "question_number": 1,
+        "question": "A 15-year-old patient comes to you feeling extremely tired and unable to concentrate at school. They believe it might be due to a poor diet. How would you assess and manage this case?",
+        "mark_scheme": {
+            "good_points": [
+                "Asks about diet and lifestyle habits",
+                "Considers medical causes (e.g., anemia, diabetes, mental health)",
+                "Provides practical advice on nutrition and sleep",
+                "Refers to appropriate services if needed"
+            ],
+            "red_flags": [
+                "Dismisses the patient’s concerns",
+                "Fails to explore medical causes",
+                "Using any offensive terminology or actions"
+            ]
+        }
+    },
+    {
+        "question_number": 2,
+        "question": "Medical professionals often have to deal with uncertainty in patient care. How do you handle situations where you do not have a clear answer?",
+        "mark_scheme": {
+            "good_points": [
+                "Acknowledges that uncertainty is part of medicine",
+                "Explains strategies such as consulting colleagues and evidence-based practice",
+                "Maintains patient trust and reassurance",
+                "Emphasizes the importance of continuous learning"
+            ],
+            "red_flags": [
+                "Pretends to know an answer instead of seeking help",
+                "Displays overconfidence without justification"
+            ]
+        }
+    },
+    {
+        "question_number": 3,
+        "question": "A junior doctor you are working with has made a minor but significant mistake in prescribing medication. They seem unaware of it. How would you handle this situation?",
+        "mark_scheme": {
+            "good_points": [
+                "Ensures patient safety first",
+                "Addresses the issue with the junior doctor in a supportive manner",
+                "Encourages a culture of learning rather than blame",
+                "Follows hospital protocol for error reporting if necessary"
+            ],
+            "red_flags": [
+                "Ignores the mistake",
+                "Blames or humiliates the junior doctor"
+            ]
+        }
+    },
+    {
+        "question_number": 4,
+        "question": "Discuss the importance of teamwork in medicine and give an example of when you worked in a team to solve a problem.",
+        "mark_scheme": {
+            "good_points": [
+                "Explains the significance of teamwork in patient care",
+                "Provides a relevant personal example",
+                "Highlights effective communication and collaboration",
+                "Reflects on the experience and what was learned"
+            ],
+            "red_flags": [
+                "Fails to provide an example",
+                "Does not acknowledge the role of others in teamwork"
+            ]
+        }
+    },
+    {
+        "question_number": 5,
+        "question": "Artificial intelligence is becoming more prevalent in medicine. Discuss its benefits and challenges.",
+        "mark_scheme": {
+            "good_points": [
+                "Explains AI applications in medicine (e.g., diagnostics, treatment planning)",
+                "Discusses benefits such as efficiency and accuracy",
+                "Addresses concerns such as patient safety, bias, and ethical considerations",
+                "Provides a balanced view of AI’s role in future healthcare"
+            ],
+            "red_flags": [
+                "Fails to discuss both benefits and challenges",
+                "Displays an overly simplistic view without depth"
+            ]
+        }
+    }
+]

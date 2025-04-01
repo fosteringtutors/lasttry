@@ -1,0 +1,81 @@
+[
+    {
+        "question_number": 1,
+        "question": "A patient is discussing being bullied at school. They are isolating themselves from others at school and feel very down every day. The patient is 11. Discuss with the interviewer the approach you would take as his GP. How would a good doctor act in this situation? What questions would you ask?",
+        "mark_scheme": {
+            "good_points": [
+                "Comforts the patient",
+                "Uses simple, layman’s terms",
+                "Ensures the patient is calm before talking",
+                "Asks open-ended questions",
+                "Shows empathy and patience"
+            ],
+            "red_flags": [
+                "Being too emotional",
+                "Using any offensive terminology or actions"
+            ]
+        }
+    },
+    {
+        "question_number": 2,
+        "question": "Organ donation in the UK is currently via an opt-out system. Discuss opt-in and opt-out schemes and the ethical debates that come with this topic.",
+        "mark_scheme": {
+            "good_points": [
+                "Explains opt-out system clearly",
+                "Discusses ethical considerations",
+                "Proposes practical solutions to increase donation rates"
+            ],
+            "red_flags": [
+                "Fails to mention ethical concerns",
+                "Using any offensive terminology or actions"
+            ]
+        }
+    },
+    {
+        "question_number": 3,
+        "question": "A patient comes to you for a routine arthritis check-up, but 2 minutes into the consultation, he mentions he’s been having suicidal thoughts. How do you deal with this situation?",
+        "mark_scheme": {
+            "good_points": [
+                "Acknowledges the seriousness of suicidal thoughts",
+                "Assesses immediate risk of harm",
+                "Refers to mental health support immediately",
+                "Reassures the patient about confidentiality"
+            ],
+            "red_flags": [
+                "Dismisses the mention of suicidal thoughts",
+                "Using any offensive terminology or actions"
+            ]
+        }
+    },
+    {
+        "question_number": 4,
+        "question": "Discuss your biggest weakness, a time you had a challenging task, and how you deal with stress.",
+        "mark_scheme": {
+            "good_points": [
+                "Identifies a real weakness",
+                "Explains how they overcame challenges",
+                "Shows self-awareness and self-improvement",
+                "Describes a clear method for dealing with stress"
+            ],
+            "red_flags": [
+                "Does not provide a genuine weakness",
+                "Shows no self-awareness or ability to improve"
+            ]
+        }
+    },
+    {
+        "question_number": 5,
+        "question": "There is often a debate over the provision of services under the NHS. Discuss whether the NHS should provide non-essential surgery.",
+        "mark_scheme": {
+            "good_points": [
+                "Considers ethical implications",
+                "Discusses funding limitations",
+                "Balances different perspectives (patient, public, and resources)"
+            ],
+            "red_flags": [
+                "Fails to consider ethical implications",
+                "Over-simplifies the issue without balancing perspectives"
+            ]
+        }
+    }
+]
